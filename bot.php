@@ -1,10 +1,11 @@
 <?php
-$access_token = 'A4gfbNFB3z2GDcmIBRRQmEK6kkFJVjchXs+ljXDcqZCu52cbGfVvf0Tr66fAX/bpPVdlrVHTbjyA0oOr+P3flfcFj13kVU7K3XNEmZWxkzskQobvTWc/zlKQRMbfMoKGeOZmQ1r5SWM4WnnLZYN4OgdB04t89/1O/w1cDnyilFU=';
+$access_token = 'sew+2f8y5MeIxhEa3kO/qccuZ+6XyBNXvG93l2qfhSQETKdEZpjK3DM8aNRL2Lt/NfG+T/mKtN7FQwxM7rU4cysF51BsyPSUCPTFIcB710+y1Z0+r0EGFGFeOgQ8EoS2j1m6GIPYc7yAv32Dub+9zwdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -17,10 +18,12 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = [
+			$message1 = [
 				'type' => 'text',
-				'text' => 'Hey wassup!'];
-			[
+				'text' => $text
+			];
+			
+			$message2 = [
     				'type' => 'sticker',
     				'packageId' => '2',
 				'stickerId' => '147'
@@ -30,7 +33,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages' => array($message1,$message2),
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -48,4 +51,23 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
+
+$myfile = fopen("/usr/share/nginx/html/json.log","a");
+
+foreach (getallheaders() as $name => $value) {
+    fwrite($myfile,"$name: $value\n");
+}
+
+$postdata = file_get_contents("php://input");
+fwrite($myfile,$postdata);
+fwrite($myfile,"\n +++++++++++++++++++++++++ \n");
+
+
+
+foreach (getallheaders() as $name => $value) {
+    echo "$name: $value\n";
+        echo "<br>";
+}
+
+
 echo "OK";
