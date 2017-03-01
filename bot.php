@@ -18,12 +18,12 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$message = [
+			$message1 = [
 				'type' => 'text',
 				'text' => $text
 			];
 			
-			$message = [
+			$message2 = [
     				'type' => 'sticker',
     				'packageId' => '2',
 				'stickerId' => '147'
@@ -71,3 +71,5 @@ foreach (getallheaders() as $name => $value) {
 
 
 echo "OK";
+
+?>
