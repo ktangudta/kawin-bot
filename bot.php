@@ -71,7 +71,6 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => 'Hello '.$profileinfo['displayName'].' '.$profileinfo['statusMessage']
 			];
-
 			
 			/*
 			$message4 = [
@@ -151,7 +150,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => array($message1,$message2,$message3),
+				'messages' => array($message1,$message3),
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
