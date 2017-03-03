@@ -6,7 +6,7 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 
-$myfile = fopen("/usr/share/nginx/html/json.log","a");
+/*$myfile = fopen("/usr/share/nginx/html/json.log","a");
 
 foreach (getallheaders() as $name => $value) {
     fwrite($myfile,"$name: $value\n");
@@ -22,7 +22,7 @@ foreach (getallheaders() as $name => $value) {
     echo "$name: $value\n";
         echo "<br>";
 }
-
+*/
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -48,7 +48,7 @@ if (!is_null($events['events'])) {
 
 		// Retrieve image picture
 		$urlprofile = $profileinfo['pictureUrl'].'/large';
-
+		/*
 		$chpic = curl_init($urlprofile);
 		$saveuri = "/usr/share/nginx/html/profile/".$uid.".png";
 		$temppic = fopen($saveuri,"wb");
@@ -58,7 +58,7 @@ if (!is_null($events['events'])) {
 		$resultpic = curl_exec($chpic);
 		curl_close($chpic);
 		fclose($saveuri);
-
+		*/
 		// Reply only when message sent is in 'text' format and match word Demo
 		if ($event['type'] == 'message' && ($event['message']['type'] == 'text' && $event['message']['text'] == 'Demo') ) {
 			// Get text sent
@@ -74,8 +74,8 @@ if (!is_null($events['events'])) {
 
 			$message4 = [
 				'type' => 'image',
-				'originalContentUrl' => 'https://iservices.me/profile/'.$uid.'.png',
-				'previewImageUrl' => 'https://iservices.me/profile/'.$uid.'.png'
+				'originalContentUrl' => $urlprofile,
+				'previewImageUrl' => $urlprofile
 			];
 
 			$message2 = [
@@ -163,8 +163,8 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 
-			fwrite($myfile,$result);
-			fwrite($myfile,"\n +++++++++++++++++++++++++ \n");
+			//fwrite($myfile,$result);
+			//fwrite($myfile,"\n +++++++++++++++++++++++++ \n");
 
 			//echo $result . "\r\n";
 		}
