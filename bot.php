@@ -125,19 +125,19 @@ if (!is_null($events['events'])) {
 								)
 							),
 							array(
-								'thumbnailImageUrl' => 'https://iservices.me/imgBC/2.png',
-								'title' => 'this is menu',
-								'text' => 'text description',
+								'thumbnailImageUrl' => 'https://sdl-stickershop.line.naver.jp/stickershop/v1/product/5004/IOS/main_animation@2x.png',
+								'title' => 'Ngao Guan Dookdik',
+								'text' => '60THB',
 								'actions' => array(
 									array(
 										'type' => 'uri',
-										'label' => 'View in LINE',
-										'uri' => 'https://line.me'
+										'label' => 'Purchase',
+										'uri' => 'https://store.line.me/stickershop/product/5004/en'
 									),
 									array(
-										'type' => 'message',
-										'label' => 'Say Hello',
-										'text' => 'Hello'
+										'type' => 'uri',
+										'label' => 'Go to sticker shop',
+										'uri' => 'https://store.line.me'
 									)
 								)
 							)
