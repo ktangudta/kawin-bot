@@ -109,7 +109,7 @@ if (!is_null($events['events'])) {
 						'columns' => array(
 							array(
 								'thumbnailImageUrl' => 'https://sdl-stickershop.line.naver.jp/stickershop/v1/product/5512/IOS/main_animation@2x.png',
-								'title' => 'Brown & Conys Lonely Hearts Date',
+								'title' => 'Brown & Conys Lonely Hearts',
 								'text' => '60THB',
 								'actions' => array(
 									array(
