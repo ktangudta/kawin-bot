@@ -69,7 +69,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$message1 = [
 				'type' => 'text',
-				'text' => 'Hello '.$profileinfo['displayName'].'  '.$profileinfo['statusMessage']
+				'text' => 'Hello '.$profileinfo['displayName'].' '.$profileinfo['statusMessage']
 			];
 
 			
