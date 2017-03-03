@@ -69,7 +69,8 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$message1 = [
 				'type' => 'text',
-				'text' => 'hello '.$profileinfo['displayName'].' '.$profileinfo['statusMessage']
+				'text' => 'Hello '.$profileinfo['displayName'].' '.$profileinfo['statusMessage'],
+				'text' => 'Here are some awesome stickers for you to choose from...']
 			];
 
 			
@@ -80,7 +81,7 @@ if (!is_null($events['events'])) {
 				'previewImageUrl' => $urlprofile
 			];*/
 
-			$message2 = [
+			/*$message2 = [
 				'type' => 'template',
 				'altText' => 'This is a confirm Template',
 				'template' => array(
@@ -99,7 +100,7 @@ if (!is_null($events['events'])) {
 							)
 						)
 				)
-			];
+			];*/
 
 			$message3 = [
 				'type' => 'template',
