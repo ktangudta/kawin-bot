@@ -60,7 +60,7 @@ if (!is_null($events['events'])) {
 		fclose($saveuri);
 		*/
 		// Reply only when message sent is in 'text' format and match word Demo
-		if ($event['type'] == 'message' && ($event['message']['type'] == 'text' && $event['message']['text'] == 'Demo') ) {
+		if ($event['type'] == 'message' && ($event['message']['type'] == 'text' && $event['message']['text'] == 'Hello') ) {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
