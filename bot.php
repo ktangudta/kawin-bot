@@ -108,19 +108,19 @@ if (!is_null($events['events'])) {
 						'type' => 'carousel',
 						'columns' => array(
 							array(
-								'thumbnailImageUrl' => 'https://iservices.me/imgBC/1.png',
-								'title' => 'this is menu',
-								'text' => 'text description',
+								'thumbnailImageUrl' => 'https://sdl-stickershop.line.naver.jp/stickershop/v1/product/5512/IOS/main_animation@2x.png',
+								'title' => 'Brown & Conys Lonely Hearts Date',
+								'text' => '60THB',
 								'actions' => array(
 									array(
 										'type' => 'uri',
-										'label' => 'View in Google',
-										'uri' => 'https://www.google.com'
+										'label' => 'Purchase',
+										'uri' => 'https://store.line.me/stickershop/product/5512/en'
 									),
 									array(
-										'type' => 'message',
-										'label' => 'Say Hello',
-										'text' => 'Hello'
+										'type' => 'uri',
+										'label' => 'Go to sticker shop',
+										'uri' => 'https://store.line.me'
 									)
 								)
 							),
